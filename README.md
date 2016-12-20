@@ -1,5 +1,6 @@
 # Featherweight-JavaScript
 A new programming language based off a "featherweight" version of JavaScript.
+Uses ANTLR and Java to parse and execute the FWJS language.
 
 # Capabilities
 ## Variables
