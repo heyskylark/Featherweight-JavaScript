@@ -1,0 +1,59 @@
+$ make
+mkdir -p generatedSrc/edu/sjsu/fwjs/parser
+java -jar lib/antlr-4.4-complete.jar -no-listener -visitor FeatherweightJavaScript.g4 -o generatedSrc/edu/sjsu/fwjs/parser
+mkdir -p build/edu/sjsu/fwjs
+javac -cp lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar:lib/antlr-4.4-complete.jar -d build src/edu/sjsu/fwjs/*.java testSrc/edu/sjsu/fwjs/*.java generatedSrc/edu/sjsu/fwjs/parser/*.java
+$ make run
+echo "Running fwjsScripts/closure.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/closure.fwjs;  echo "Running fwjsScripts/examples.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/examples.fwjs;  echo "Running fwjsScripts/functions.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/functions.fwjs;  echo "Running fwjsScripts/operators.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/operators.fwjs;  echo "Running fwjsScripts/test.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/test.fwjs;  echo "Running fwjsScripts/controlStructs.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/controlStructs.fwjs;  echo "Running fwjsScripts/factorial.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/factorial.fwjs;  echo "Running fwjsScripts/lists.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/lists.fwjs;  echo "Running fwjsScripts/scoping.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/scoping.fwjs;  echo "Running fwjsScripts/while.fwjs"; java -cp build:lib/antlr-4.4-complete.jar edu.sjsu.fwjs.Interpreter fwjsScripts/while.fwjs;
+Running fwjsScripts/closure.fwjs
+1
+2
+3
+4
+Running fwjsScripts/examples.fwjs
+7
+true
+Running fwjsScripts/functions.fwjs
+function() {...};
+2
+3
+Running fwjsScripts/operators.fwjs
+14
+14
+20
+Running fwjsScripts/test.fwjs
+7
+null
+Running fwjsScripts/controlStructs.fwjs
+2
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+1
+Running fwjsScripts/factorial.fwjs
+40320
+Running fwjsScripts/lists.fwjs
+1
+2
+55
+Running fwjsScripts/scoping.fwjs
+42
+666
+Running fwjsScripts/while.fwjs
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
